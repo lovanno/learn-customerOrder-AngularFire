@@ -5,7 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AngularFireModule } from '@Angular/fire/compat';
+import { AngularFireModule } from '@angular/fire/compat';
+import { UsersModule } from './features/users/users.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -15,6 +16,7 @@ import { AngularFireModule } from '@Angular/fire/compat';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firestore),
     AngularFirestoreModule,
+    UsersModule
   ],
   providers: [],
   bootstrap: [AppComponent]

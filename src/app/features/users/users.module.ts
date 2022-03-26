@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { UserHomeComponent } from './components/user-home/user-home.component';
+import { UserOrderComponent } from './components/user-order/user-order.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [UserHomeComponent, UserOrderComponent],
   imports: [
-    CommonModule
+    CommonModule,
+  ],
+  exports: [
+    UserHomeComponent, UserOrderComponent
   ]
 })
 export class UsersModule { }
