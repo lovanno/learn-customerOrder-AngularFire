@@ -33,6 +33,11 @@ export class UserHomeComponent {
   }
 
 
-
+  getIconCheck(gender: string) {
+    if (gender == 'male') {
+      return '../../../../../assets/maleIcon.png'
+    }
+    return '../../../../../assets/femaleIcon.png'
+  }
 }
 

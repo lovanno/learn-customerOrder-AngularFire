@@ -1,5 +1,27 @@
 <p>user-home works!</p>
 
+<table>
 
+   <tr>
+      <th>&nbsp;</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>&nbsp;</th>
+   </tr>
+   <tbody>
+   <tr *ngFor="let item of homeData.customersItems | async">
+      <td><img [src]="getIconCheck(item.gender)" class="profileIcon"></td>
+      <td>{{item.name}}</td>
+      <td>{{item.address}}</td>
+      <td>{{item.city}}</td>
+      <td>{{item.location}}</td>
+      <td><button>View Order</button></td>
+   </tr>
+   </tbody>
+
+
+</table>
    <!---<button (click)="homeData.addTest()">Click MEEEE</button>    -->
 
