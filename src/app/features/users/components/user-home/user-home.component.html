@@ -1,6 +1,37 @@
 
 <button (click)="toggleCardView()">Card View</button>
-<button (click)="toggleTableView()">Order View</button>
+<button (click)="toggleTableView()">Table View</button>
+<button (click)="toggleAddCustomerForm()">Add Customer</button>
+
+
+
+<!--                    Add Customer Form Section                    -->
+
+<!--     Reactive forms would be a nice implementation to check values  -->
+<div class="addCustomerForm" [hidden]="!addCustomerForm">
+   <h2>Add Customer</h2>
+   <form #simpleForm="ngForm" (ngSubmit)="homeData.createCustomer(simpleForm.value); simpleForm.resetForm()" >
+         <input type="text" ngModel placeholder="Enter Address" name="address" required minlength="1">
+      <br>
+         <input type="text" ngModel placeholder="Enter City" name="city" required minlength="1">
+      <br>
+      <input type="text" ngModel placeholder="Enter First Name" name="firstName" required minlength="1">
+      <br>
+         <input type="text" ngModel placeholder="Enter Gender" name="gender" required minlength="1">
+      <br>
+         <input type="text" ngModel placeholder="Enter Last Name" name="lastName" required minlength="1">
+      <br>
+         <input type="text" ngModel placeholder="Enter Location" name="location" required minlength="1">
+      <br>
+         <input type="text" ngModel placeholder="Enter Name" name="name" required minlength="1">
+      <br>
+      
+      <!--  If the form inputs don't fit the required minlength, the form won't be valid  -->
+      <button [disabled]="!simpleForm.valid">Create Customer</button>
+   </form>
+</div>
+
+
 
 
 
@@ -58,4 +89,5 @@
 
       </tbody> 
    </table>
+
 

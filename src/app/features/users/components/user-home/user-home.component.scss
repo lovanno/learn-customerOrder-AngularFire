@@ -1,3 +1,16 @@
+    /* Add Customer Form */
+    .addCustomerForm {
+      margin-left: 37rem;
+      margin-right: 10rem;
+      margin-bottom: 5rem;
+    }
+
+    input.ng-invalid.ng-touched {
+      border: 2px solid red;
+    }
+
+
+    /*Shared*/
     .profileIcon {
       background-position: center;
       background-repeat: no-repeat;
@@ -5,6 +18,7 @@
       height: 40px;
       width: 40px;
     }
+
 
 
     /*Cardview Simple Look */
