@@ -7,11 +7,12 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { UsersModule } from './features/users/users.module';
-import { NgxPaginationModule } from 'ngx-pagination';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,7 +20,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AngularFireModule.initializeApp(environment.firestore),
     AngularFirestoreModule,
     UsersModule,
-    NgxPaginationModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

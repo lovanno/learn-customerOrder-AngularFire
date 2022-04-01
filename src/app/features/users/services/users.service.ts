@@ -84,4 +84,11 @@ export class UsersService {
     this.ordersCollection.doc(id).set(data);
   }
 
+  getIconCheck(gender: string) {
+    if (gender.toLowerCase() == 'male') {
+      return '../../../../../assets/maleIcon.png'
+    }
+    return '../../../../../assets/femaleIcon.png'
+  }
+
 }

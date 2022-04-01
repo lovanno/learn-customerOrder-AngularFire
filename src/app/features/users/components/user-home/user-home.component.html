@@ -1,3 +1,8 @@
+<!---
+<button (click)="toggleCardView()">Card View</button>
+<button (click)="toggleTableView()">Table View</button>
+<button (click)="toggleAddCustomerForm()">Add Customer</button> --->
+
 
 <button (click)="toggleCardView()">Card View</button>
 <button (click)="toggleTableView()">Table View</button>
@@ -5,89 +10,7 @@
 
 
 
-<!--                    Add Customer Form Section                    -->
-
-<!--     Reactive forms would be a nice implementation to check values  -->
-<div class="addCustomerForm" [hidden]="!addCustomerForm">
-   <h2>Add Customer</h2>
-   <form #simpleForm="ngForm" (ngSubmit)="homeData.createCustomer(simpleForm.value); simpleForm.resetForm()" >
-         <input type="text" ngModel placeholder="Enter Address" name="address" required minlength="1">
-      <br>
-         <input type="text" ngModel placeholder="Enter City" name="city" required minlength="1">
-      <br>
-      <input type="text" ngModel placeholder="Enter First Name" name="firstName" required minlength="1">
-      <br>
-         <input type="text" ngModel placeholder="Enter Gender" name="gender" required minlength="1">
-      <br>
-         <input type="text" ngModel placeholder="Enter Last Name" name="lastName" required minlength="1">
-      <br>
-         <input type="text" ngModel placeholder="Enter Location" name="location" required minlength="1">
-      <br>
-         <input type="text" ngModel placeholder="Enter Name" name="name" required minlength="1">
-      <br>
-      
-      <!--  If the form inputs don't fit the required minlength, the form won't be valid  -->
-      <button [disabled]="!simpleForm.valid">Create Customer</button>
-   </form>
-</div>
-
-
-
-
-
-<!--                               Card View Section                                   -->
-<div [hidden]="!cardView" class = "cardView section">
-   <div class ="cardViewCont">
-
-      <div class="cardBox" *ngFor="let ite of homeData.customersItems | async">
-         <div class="cardHeader">
-            <p>{{ite.name}}</p>
-            <button>Edit</button>
-         </div>
-
-         <div class="cardInfo">
-            <div><img [src]="getIconCheck(ite.gender)" class="profileIcon"></div>
-         <div class ="infoText">
-            <p>{{ite.city}},</p>
-            <p>{{ite.location}}</p>
-            <button>View Orders</button>
-         </div>
-         </div> 
-      </div>
-
-   </div>
-</div>
-
-
-
-<!--                               Table View Section                                   -->
-
-<!--I will be using [hidden] to toggle between the 2 views: card and table views. 
-      This is a better approach then ngIf because toggling will be done frequently. 
-      I wouldn't wants to increase reads from firestore over and over again with ngIf.
-      The data also won't be manipulated or updated constantly. -->
-
-   <table [hidden]="!tableView" class="tableView section">
-      <tr>
-         <th>&nbsp;</th>
-         <th>Name</th>
-         <th>Address</th>
-         <th>City</th>
-         <th>State</th>
-         <th>&nbsp;</th>
-      </tr>
-
-      <tbody>
-         <tr *ngFor="let item of homeData.customersItems | async">
-            <td><img [src]="getIconCheck(item.gender)" class="profileIcon"></td>
-            <td>{{item.name}}</td>
-            <td>{{item.address}}</td>
-            <td>{{item.city}}</td>
-            <td>{{item.location}}</td>
-            <td><button>View Order</button></td>
-         </tr>
-
-      </tbody> 
-   </table>
-
+<app-user-adduser [hidden]="!addCustomerForm" (sendData)="homeData.createCustomer($event)"></app-user-adduser>
+<app-user-card [hidden]="!cardView" [userList]="(homeData.customersItems | async)" [genderTest]="homeData.getIconCheck"></app-user-card>
+<app-user-table [hidden]="!tableView" [userList]="(homeData.customersItems | async)" [genderTest]="homeData.getIconCheck"></app-user-table>
 

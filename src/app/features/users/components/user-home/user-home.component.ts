@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { UsersService } from '../../services/users.service';
 import { NgForm } from '@angular/forms';
 
@@ -8,10 +8,14 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./user-home.component.scss']
 })
 export class UserHomeComponent {
+  @Input() sendData: any;
+
+
   newItem: any[] = [];
   cardView = true;
   tableView = false;
   addCustomerForm = false;
+
 
 
   constructor(public homeData: UsersService) { }
@@ -35,12 +39,7 @@ export class UserHomeComponent {
     }
   }
 
-  getIconCheck(gender: string) {
-    if (gender.toLowerCase() == 'male') {
-      return '../../../../../assets/maleIcon.png'
-    }
-    return '../../../../../assets/femaleIcon.png'
-  }
+
 
 }
 
