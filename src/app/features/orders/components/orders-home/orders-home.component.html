@@ -1,0 +1,60 @@
+<!--                        itemsSales Section                          -->
+   <div class="itemSalesCont">     <!--  Best Selling Categories: Total and Quantity --->
+        <div class="itemSalesCard">
+            <h2>Dresses</h2>
+            <div class="itemCardInfoText">
+                <p>Total: {{dressTotal}}</p>
+                <p>Count: {{dressCount}}</p>
+            </div>
+        </div>
+
+        <div class="itemSalesCard">
+            <h2>Shirts</h2>
+            <div class="itemCardInfoText">
+                <p>Total: {{shirtsTotal}}</p>
+                <p>Count: {{shirtsCount}}</p>
+            </div>
+        </div>
+
+        <div class="itemSalesCard">
+            <h2>Pants</h2>
+            <div class="itemCardInfoText">
+                <p>Total: {{pantsTotal}}</p>
+                <p>Count: {{pantsCount}}</p>
+            </div>
+        </div>
+
+        <div class="itemSalesCard">
+            <h2>Shoes</h2>
+            <div class="itemCardInfoText">
+                <p>Total: {{shoesTotal}}</p>
+                <p>Count: {{shoesCount}}</p>
+            </div>
+        </div>
+
+   </div>
+
+
+<!--                            customerTotalTable section                      -->
+    <table class="customerTotalTable section">   <!--    Individual Customer Totals      -->
+        <h1>Customer Total Per Category</h1>
+      <tr>
+         <th>Customers</th>
+         <th>Dresses</th>
+         <th>Shirts</th>
+         <th>Pants</th>
+         <th>Shoes</th>
+         <th>&nbsp;</th>
+      </tr>
+
+      <tbody>
+        <tr *ngFor="let item of customerOrders; let i = index">
+            <td class ="customerTableBreak">{{salesName[i]}}</td>
+            <td class ="customerTableBreak">{{item?.Dresses?.total}}</td>
+            <td class ="customerTableBreak">{{item?.Shirts?.total}}</td>
+            <td class ="customerTableBreak">{{item?.Pants?.total}}</td>
+            <td class ="customerTableBreak">{{item?.Shoes?.total}}</td>
+            <td class ="customerTableBreak"><button>View Order</button></td>
+         </tr>
+      </tbody> 
+   </table>

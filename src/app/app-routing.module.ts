@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { OrdersHomeComponent } from './features/orders/components/orders-home/orders-home.component';
+import { OrdersModule } from './features/orders/orders.module';
 /*import { UserHomeComponent } from './features/users/components/user-home/user-home.component';
 import { UserOrderComponent } from './features/users/components/user-order/user-order.component';*/
 
 const routes: Routes = [
-  /*{
-    path: '', component: UserHomeComponent
+  {
+    path: 'info',
+    loadChildren: () =>
+      import('./pages/users-page/users-page.module').then((m) => m.UsersPageModule),
   },
   {
-    path: 'order', component: UserOrderComponent
+    path: 'orders', component: OrdersHomeComponent
   }
-*/
+
 ];
 
 @NgModule({

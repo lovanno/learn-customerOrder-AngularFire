@@ -1,0 +1,33 @@
+
+
+<!--                               Table View Section                                   -->
+
+<!--I will be using [hidden] to toggle between the 2 views: card and table views. 
+      This is a better approach then ngIf because toggling will be done frequently. 
+      I wouldn't wants to increase reads from firestore over and over again with ngIf.
+      The data also won't be manipulated or updated constantly. -->
+
+   <table class="tableView section">
+      <tr>
+         <th>&nbsp;</th>
+         <th>Name</th>
+         <th>Address</th>
+         <th>City</th>
+         <th>State</th>
+         <th>&nbsp;</th>
+      </tr>
+
+      <tbody>
+         <tr *ngFor="let item of userList">
+           <td><img [src]="genderTest(item.gender)" class="profileIcon"></td> 
+            <td>{{item.name}}</td>
+            <td>{{item.address}}</td>
+            <td>{{item.city}}</td>
+            <td>{{item.location}}</td>
+            <td><button>View Order</button></td>
+         </tr>
+
+      </tbody> 
+   </table>
+
+

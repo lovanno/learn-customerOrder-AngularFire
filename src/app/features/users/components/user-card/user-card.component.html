@@ -1,0 +1,24 @@
+
+<!--                               Card View Section                                   -->
+<div class = "cardView section">
+   <div class ="cardViewCont">
+
+      <div class="cardBox" *ngFor="let ite of userList">
+         <div class="cardHeader">
+            <p>{{ite.name}}</p>
+            <button>Edit</button>
+         </div>
+
+         <div class="cardInfo">
+          <div><img [src]="genderTest(ite.gender)" class="profileIcon"></div> 
+         <div class ="infoText">
+            <p>{{ite.city}},</p>
+            <p>{{ite.location}}</p>
+            <button>View Orders</button>
+         </div>
+         </div> 
+      </div>
+
+   </div>
+</div>
+

@@ -21,6 +21,7 @@ export interface Orders {
             total: number;
         }
     }
+    customID: string;
 }
 
 
