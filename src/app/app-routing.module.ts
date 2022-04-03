@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { OrdersDetailsComponent } from './features/orders/components/orders-details/orders-details.component';
 import { OrdersHomeComponent } from './features/orders/components/orders-home/orders-home.component';
 import { OrdersModule } from './features/orders/orders.module';
 /*import { UserHomeComponent } from './features/users/components/user-home/user-home.component';
@@ -12,7 +13,10 @@ const routes: Routes = [
       import('./pages/users-page/users-page.module').then((m) => m.UsersPageModule),
   },
   {
-    path: 'orders', component: OrdersHomeComponent
+    path: 'orders', component: OrdersHomeComponent,
+    children: [
+      { path: ':name', component: OrdersDetailsComponent },
+    ]
   }
 
 ];

@@ -23,7 +23,7 @@ export class OrdersService {
 
   /*Will have to rewrite these functions to ensure that both collections in firestore are updated and that customers with no orders aren't implemented*/
   getOrder(id: string) {
-    return this.ordersCollection.doc(id);
+    return this.ordersCollection.doc(id).valueChanges();
   }
 
   getAllOrders(): AngularFirestoreCollection<any> {

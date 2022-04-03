@@ -1,3 +1,6 @@
+<div *ngIf="route.children.length === 0">
+
+
 <!--                        itemsSales Section                          -->
    <div class="itemSalesCont">     <!--  Best Selling Categories: Total and Quantity --->
         <div class="itemSalesCard">
@@ -36,8 +39,9 @@
 
 
 <!--                            customerTotalTable section                      -->
-    <table class="customerTotalTable section">   <!--    Individual Customer Totals      -->
-        <h1>Customer Total Per Category</h1>
+   <div class = "customerTotalTable section">
+    <h1>Customer Total Per Category</h1>
+    <table class="customerTotalTable">   <!--    Individual Customer Totals      -->
       <tr>
          <th>Customers</th>
          <th>Dresses</th>
@@ -54,7 +58,15 @@
             <td class ="customerTableBreak">{{item?.Shirts?.total}}</td>
             <td class ="customerTableBreak">{{item?.Pants?.total}}</td>
             <td class ="customerTableBreak">{{item?.Shoes?.total}}</td>
-            <td class ="customerTableBreak"><button>View Order</button></td>
+            <td class ="customerTableBreak"><a [routerLink]="['/orders', salesName[i]]">View Order</a></td>
          </tr>
       </tbody> 
    </table>
+   </div>
+
+
+
+   
+</div>
+
+   <router-outlet></router-outlet>

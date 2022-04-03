@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { OrdersService } from '../../services/orders.service';
 
@@ -10,6 +11,7 @@ import { OrdersService } from '../../services/orders.service';
 export class OrdersHomeComponent {
   public customerOrders: any[] = [];
   public salesName: any[] = [];
+  public chosenLink = 0;
 
   /*  Totals+Quantity for the itemsSales Section  */
   public dressTotal = 0;
@@ -27,7 +29,7 @@ export class OrdersHomeComponent {
   addCustomerForm = false;
   subscription: Subscription;
 
-  constructor(public orderServ: OrdersService) {
+  constructor(public orderServ: OrdersService, public route: ActivatedRoute) {
 
     this.subscription =
       this.orderServ.ordersItems
@@ -70,6 +72,7 @@ export class OrdersHomeComponent {
   }
 
 }
+
 
 
 
