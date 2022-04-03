@@ -7,11 +7,12 @@ import { UserHomeComponent } from './components/user-home/user-home.component';
 import { UserTableComponent } from './components/user-table/user-table.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { UserAdduserComponent } from './components/user-adduser/user-adduser.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [UserHomeComponent, UserTableComponent, UserCardComponent, UserAdduserComponent],
   imports: [
-    CommonModule, NgxPaginationModule, FormsModule
+    CommonModule, NgxPaginationModule, FormsModule, RouterModule
   ],
   exports: [UserHomeComponent, UserTableComponent, UserCardComponent, UserAdduserComponent]
 })

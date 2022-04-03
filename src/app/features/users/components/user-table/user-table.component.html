@@ -24,10 +24,12 @@
             <td>{{item.address}}</td>
             <td>{{item.city}}</td>
             <td>{{item.location}}</td>
-            <td><button>View Order</button></td>
+            <td><a [routerLink]="['/orders', item.firstName + '-' + item.lastName]">View Order</a></td>
          </tr>
 
       </tbody> 
    </table>
+
+   <router-outlet></router-outlet>
 
 

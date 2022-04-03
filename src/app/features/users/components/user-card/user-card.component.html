@@ -14,11 +14,13 @@
          <div class ="infoText">
             <p>{{ite.city}},</p>
             <p>{{ite.location}}</p>
-            <button>View Orders</button>
+            <a a [routerLink]="['/orders', ite.firstName + '-' + ite.lastName]">View Orders</a>
          </div>
          </div> 
       </div>
 
    </div>
 </div>
+
+   <router-outlet></router-outlet>
 

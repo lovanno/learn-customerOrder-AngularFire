@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-user-table',
@@ -10,6 +10,8 @@ export class UserTableComponent {
   @Input() genderTest: any
 
   constructor() { }
+
+
 
 
 }

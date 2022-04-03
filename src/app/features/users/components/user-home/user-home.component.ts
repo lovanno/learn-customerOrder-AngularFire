@@ -10,7 +10,6 @@ import { NgForm } from '@angular/forms';
 export class UserHomeComponent {
   @Input() sendData: any;
 
-
   newItem: any[] = [];
   cardView = true;
   tableView = false;
@@ -18,7 +17,8 @@ export class UserHomeComponent {
 
 
 
-  constructor(public homeData: UsersService) { }
+  constructor(public homeData: UsersService) {
+  }
 
   toggleCardView() {
     this.cardView = true;
@@ -38,6 +38,7 @@ export class UserHomeComponent {
       this.addCustomerForm = false;
     }
   }
+
 
 
 
