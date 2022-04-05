@@ -8,6 +8,10 @@ import { UserOrderComponent } from './features/users/components/user-order/user-
 
 const routes: Routes = [
   {
+    path: '',
+    loadChildren: () => import('./pages/landing-page/landing-page.module').then((m) => m.LandingPageModule)
+  },
+  {
     path: 'info',
     loadChildren: () =>
       import('./pages/users-page/users-page.module').then((m) => m.UsersPageModule),
