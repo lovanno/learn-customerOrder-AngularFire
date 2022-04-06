@@ -9,16 +9,16 @@
 
    <table class="tableView section">
       <tr>
-         <th>&nbsp;</th>
-         <th>Name</th>
+         <th><button (click)='sortedCol = "gender"'>Gender</button></th>
+         <th><button (click)='sortedCol = "name"'>Name</button></th>
          <th>Address</th>
-         <th>City</th>
-         <th>State</th>
-         <th>&nbsp;</th>
+         <th>City</th> 
+         <th><button (click)='sortedCol = "location"'>State</button></th>
+         <th><button (click)="sortDirection()">{{filterDirection}}</button></th>
       </tr>
 
       <tbody>
-         <tr *ngFor="let item of userList">
+         <tr *ngFor="let item of userList | tableFilter: sortedCol : filterDirection | paginate: { itemsPerPage: 10, currentPage: pageNum }">
            <td><img [src]="genderTest(item.gender)" class="profileIcon"></td> 
             <td>{{item.name}}</td>
             <td>{{item.address}}</td>
@@ -26,9 +26,10 @@
             <td>{{item.location}}</td>
             <td><a [routerLink]="['/orders', item.firstName + '-' + item.lastName]">View Order</a></td>
          </tr>
-
       </tbody> 
    </table>
+      <pagination-controls (pageChange)="pageNum = $event"></pagination-controls>
+
 
    <router-outlet></router-outlet>
 

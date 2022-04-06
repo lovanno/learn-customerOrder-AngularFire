@@ -22,7 +22,7 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
     AngularFireModule.initializeApp(environment.firestore),
     AngularFirestoreModule,
     BrowserAnimationsModule,
-    HeaderModule
+    HeaderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
