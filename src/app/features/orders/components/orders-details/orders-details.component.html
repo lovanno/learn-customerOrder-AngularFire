@@ -1,0 +1,31 @@
+
+<h1 class="orderPageHeader">Customer Information</h1>
+
+<p class="orderCustomerHeader">Orders for {{currentRoute}}: {{orderTotal}}</p>
+
+<div class ="orderItemsCont">
+    <div class="orderItemsType" *ngIf="(currentDoc | async)?.order?.Dresses">
+        <h2>Dresses: ${{(currentDoc | async)?.order?.Dresses?.total}}</h2>
+        <p>Price: ${{(currentDoc | async)?.order?.Dresses?.price}}.00</p>
+        <p>Quantity: {{(currentDoc | async)?.order?.Dresses?.quantity}}</p>
+    </div>
+
+    <div class="orderItemsType" *ngIf="(currentDoc | async)?.order?.Shirts">
+        <h2>Shirts: ${{(currentDoc | async)?.order?.Shirts?.total}}</h2>
+        <p>Price: ${{(currentDoc | async)?.order?.Shirts?.price}}.00</p>
+        <p>Quantity: {{(currentDoc | async)?.order?.Shirts?.quantity}}</p>
+    </div>
+
+
+    <div class="orderItemsType" *ngIf="(currentDoc | async)?.order?.Pants">
+        <h2>Pants: ${{(currentDoc | async)?.order?.Pants?.total}}</h2>
+        <p>Price: ${{(currentDoc | async)?.order?.Pants?.price}}.00</p>
+        <p>Quantity: {{(currentDoc | async)?.order?.Pants?.quantity}}</p>
+    </div>
+
+    <div class="orderItemsType" *ngIf="(currentDoc | async)?.order?.Shoes">
+        <h2>Shoes: ${{(currentDoc | async)?.order?.Shoes?.total}}</h2>
+        <p>Price: ${{(currentDoc | async)?.order?.Shoes?.price}}.00</p>
+        <p>Quantity: {{(currentDoc | async)?.order?.Shoes?.quantity}}</p>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+h2.landingHeader {
+    position: relative;
+    left: 33%;
+    font-family: "Times New Roman", Times, serif;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+.choicePathCont {
+    display: flex;
+    justify-content: space-around;
+}
+
+.choiceRouteCard {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    width: 38%;
+    padding: 1rem;
+    padding-top: 0.3rem;
+}
+
+
+p.landingDesc {
+    font-family: garamond, bodoni MT;
+    text-transform: capitalize;
+    position: relative;
+    left: 45.25%;
+    font-size: 2vw;
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+}
+
+
+a.cardRoutes {
+    text-decoration: none;
+    font-family: garamond;
+    font-size: 1.3rem;
+    letter-spacing: 0.3rem;
+    text-decoration: none;
+    color: #cdab7b;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+p {
+    line-height: 1.6rem;
+    font-size: 0.85rem;
+}
