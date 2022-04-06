@@ -16,11 +16,40 @@
       z-index: 1;
     }
 
-
-    a.routed {
-      cursor: pointer;
+    .navBanner{
+      background-color: #000225;
     }
 
+    @mixin a-header{
+      cursor: pointer;
+      text-decoration: none;
+
+      font-size: 0.9rem;
+      letter-spacing: 0.3rem;
+      font-family: garamond;
+
+      font-style: italic;
+      text-decoration: none;
+      color: #cdab7b;
+
+      margin-top: 1.3rem;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+    }
+
+  a.routed {
+    @include a-header();
+  }
+
+  a.routedMain{
+    @include a-header();
+    font-size: 1.3rem;
+    margin-right: 2.0rem;
+   
+    color: white;
+    text-transform: uppercase;
+    font-style: none;
+  }
 
     @media (min-width: 768px) {
       .sidenav {
