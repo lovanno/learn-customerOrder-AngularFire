@@ -8,7 +8,7 @@ import { UserTableComponent } from './components/user-table/user-table.component
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { UserAdduserComponent } from './components/user-adduser/user-adduser.component';
 import { RouterModule } from '@angular/router';
-import { TableFilterPipe } from './components/user-table/table-filter.pipe';
+import { TableFilterPipe } from './pipes/table-filter.pipe';
 
 @NgModule({
   declarations: [UserHomeComponent, UserTableComponent, UserCardComponent, UserAdduserComponent, TableFilterPipe],

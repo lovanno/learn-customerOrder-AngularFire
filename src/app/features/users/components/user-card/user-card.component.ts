@@ -10,6 +10,17 @@ export class UserCardComponent {
   @Input() genderTest: any;
 
   users = []
+  sortedCol!: string;
+  filterDirection = 'asc';
+
+  sortDirection() {
+    if (this.filterDirection == 'asc') {
+      this.filterDirection = 'desc'
+    }
+    else {
+      this.filterDirection = 'asc'
+    }
+  }
 
 
   constructor() { }

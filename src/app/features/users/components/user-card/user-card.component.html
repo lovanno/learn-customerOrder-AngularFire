@@ -2,8 +2,10 @@
 <!--                               Card View Section                                   -->
 <div class = "cardView section">
    <div class ="cardViewCont">
+      <button (click)="sortedCol = 'location'">Sort by State</button>
+      <button (click)="sortDirection()" [disabled]="!sortedCol">{{filterDirection}}</button>
 
-      <div class="cardBox" *ngFor="let ite of userList">
+      <div class="cardBox" *ngFor="let ite of userList | tableFilter : sortedCol : filterDirection "  >
          <div class="cardHeader">
             <p>{{ite.name}}</p>
             <button>Edit</button>
