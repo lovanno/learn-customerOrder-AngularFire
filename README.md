@@ -15,17 +15,17 @@ any user experience.
 **Data Finished (Version 1):** 4/6/2022 
 
 # App Architecture
-![](src/assets/githubImages/customerOrders%20(v1).png)
+![Architecture!](src/assets/githubImages/customerOrders%20(v1).png)
 
 
 
 # Firestore Database Structure
 ## Customers
-![](src/assets/githubImages/customerCol.png)
+![Customers!](src/assets/githubImages/customerCol.png)
 
 
 ## Orders
-![](src/assets/githubImages/ordersCol.png)
+![Orders!](src/assets/githubImages/ordersCol.png)
 
 
 
