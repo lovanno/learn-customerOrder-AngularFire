@@ -1,27 +1,45 @@
-# CustomerOrder
+# Customer Order                                                                      
+**Stack:** *Angular (SASS), Firestore*                                    
+      
+#### **Objective 📈:** Create an Angular app that manipulates data, utilizes lazy loading, and incorporates child routing.
+**Purpose:** To learn what a true developer does day in and day: work with data. Making API calls and updating states is crucial for
+any user experience. 
+ 
+ 
+**Requirements** 🚦
+*•Must have an angular service that incorporates firestore and CRUD actions 
+•Must have routing with unique child routes
+•Must have scalable architecture*
+ 
+ 
+**Data Finished (Version 1):** 4/6/2022 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
+# App Architecture
+![](src/assets/githubImages/customerOrders%20(v1).png)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# Firestore Database Structure
+## Customers
+![](src/assets/githubImages/customerCol.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Orders
+![](src/assets/githubImages/ordersCol.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+ 
+**What's the most technically challenging part of this project and why?**
+The most challenging part was app architecture. I struggled because I exported modules incorrectly and made large components with too much logic. 
+ 
+Thanks to Touhid Rahman's guide on Angular App architecture, (https://javascript.plainenglish.io/how-to-structure-angular-apps-in-2021-a0bdd481ad0d)
+I was able to connect all the dots and see how Angular truly works.
+ 
+ 
+##Realizations ⌛️
+• Components should be simple and should focus on doing one thing very well. Doing this allows easier testing, debugging, and understanding of the app.
+• Child routes must be independent and cannot grab logic from parent routes. This would defeat the purpose of lazy loading and bookmarking links.
+• Database structures affect the complexity of code. In my case, I had to iterate the orders collection three times because I added an unnecessary map(an array with nested array of objects inside) to firestore
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
